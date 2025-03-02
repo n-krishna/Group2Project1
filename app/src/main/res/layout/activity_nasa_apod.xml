@@ -1,34 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    tools:context=".NasaApodActivity">
+
+    <EditText
+        android:id="@+id/dateInput"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".NasaApodActivity"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:hint="Enter date (YYYY-MM-DD)"
+        android:inputType="date"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
 
-        <EditText
-            android:id="@+id/dateInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter date (YYYY-MM-DD)" />
+    <Button
+        android:id="@+id/fetchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fetch APOD"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
 
-        <Button
-            android:id="@+id/fetchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fetch APOD" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        android:scaleType="centerCrop"
+        android:background="@android:color/darker_gray"
+        android:elevation="6dp"
+        android:clipToOutline="true"
+        android:layout_marginBottom="16dp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:scaleType="fitCenter" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/description"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="APOD Description"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:padding="12dp"
+        android:textAlignment="viewStart"
+        android:lineSpacingExtra="4dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp" />
+</LinearLayout>
